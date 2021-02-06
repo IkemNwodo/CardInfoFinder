@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.bankwithmit.cardinfofinder.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_input"
+            app:destination="@id/navigation_input" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_ocr"
+            app:destination="@id/navigation_ocr" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.bankwithmit.cardinfofinder.ui.history.HistoryFragment"
+        android:label="@string/title_history"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/navigation_input"
+        android:name="com.bankwithmit.cardinfofinder.ui.inputfield.InputFragment"
+        android:label="@string/input_field"
+        tools:layout="@layout/fragment_input" >
+        <action
+            android:id="@+id/action_navigation_input_to_navigation_result"
+            app:destination="@id/navigation_result" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_ocr"
+        android:name="com.bankwithmit.cardinfofinder.ui.ocr.OCRFragment"
+        android:label="@string/scan"
+        tools:layout="@layout/fragment_o_c_r" >
+        <action
+            android:id="@+id/action_navigation_ocr_to_navigation_result"
+            app:destination="@id/navigation_result" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_result"
+        android:name="com.bankwithmit.cardinfofinder.ui.result.ResultFragment"
+        android:label="@string/result"
+        tools:layout="@layout/result_fragment" >
+        <action
+            android:id="@+id/action_navigation_result_to_navigation_history"
+            app:destination="@id/navigation_history"
+            app:popUpTo="@id/navigation_history"/>
+        <argument
+            android:name="cardNumber"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CardInfoFinder</string>
+    <string name="title_home">Home</string>
+    <string name="title_history">History</string>
+    <string name="scan">Scan</string>
+    <string name="check">Check</string>
+    <string name="card_brand">Card Brand: %1$s</string>
+    <string name="card_type">Card Type: %1$s</string>
+    <string name="bank">Bank: %1$s</string>
+    <string name="country">Country: %1$s </string>
+    <string name="input_field">Input</string>
+    <string name="result">Result</string>
+    <string name="scan_canceled">Scan canceled</string>
+    <string name="scan_failed">Scan failed</string>
+    <string name="error_message">Please check the following: \n \t\t 1. You are connected to the internet. \n \t\t 2. The card number is complete and valid.</string>
+    <string name="snack_message">Something went wrong</string>
+
+
+</resources>
