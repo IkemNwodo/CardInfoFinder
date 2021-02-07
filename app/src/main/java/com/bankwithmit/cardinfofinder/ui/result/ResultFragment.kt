@@ -15,7 +15,9 @@ import com.bankwithmit.cardinfofinder.databinding.FragmentOCRBinding
 import com.bankwithmit.cardinfofinder.databinding.ResultFragmentBinding
 import com.bankwithmit.cardinfofinder.getText
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ResultFragment : Fragment() {
 
     private var _binding: ResultFragmentBinding? = null

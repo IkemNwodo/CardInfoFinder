@@ -1,0 +1,1 @@
+C:\Users\Ikem\AndroidStudioProjects\CardInfoFinder\buildSrc\build\classes\kotlin\main\Deps.class;C:\Users\Ikem\AndroidStudioProjects\CardInfoFinder\buildSrc\build\classes\kotlin\main\Versions.class

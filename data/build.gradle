@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion Versions.compile_sdk
+    buildToolsVersion Versions.build_tools_version
+
+    defaultConfig {
+        minSdkVersion Versions.min_sdk_version
+        targetSdkVersion Versions.target_sdk
+        versionCode Versions.version_code
+        versionName Versions.version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project(":domain")
+
+    implementation Deps.kotlin_stdlib
+    implementation Deps.androidx_core_ktx
+    implementation Deps.retrofit
+    implementation Deps.retrofit_converter
+    implementation Deps.retrofit_coroutine_adapter
+    implementation Deps.room
+    implementation Deps.room_compiler
+    implementation Deps.room_ktx
+
+    testImplementation Deps.junit
+    androidTestImplementation Deps.junit_ext
+    androidTestImplementation Deps.espresso_core
+}
