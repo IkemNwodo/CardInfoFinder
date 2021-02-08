@@ -36,6 +36,9 @@ dependencies {
 
     implementation project(":domain")
 
+    implementation Deps.hilt_android
+    implementation Deps.hilt_android_compiler
+    
     implementation Deps.kotlin_stdlib
     implementation Deps.androidx_core_ktx
     implementation Deps.retrofit
