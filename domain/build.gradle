@@ -10,4 +10,7 @@ java {
 
 dependencies {
     implementation Deps.kotlin_stdlib
+
+    implementation Deps.hilt_android
+    implementation Deps.hilt_android_compiler
 }
