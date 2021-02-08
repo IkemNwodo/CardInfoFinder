@@ -1,5 +1,3 @@
-import Versions.hilt_version
-import Versions.paycard_version
 
 object Versions {
     val kotlin = "1.3.72"
@@ -22,6 +20,7 @@ object Versions {
     val constraint_layout = "2.0.4"
     val androidx_app_compact = "1.2.0"
     val hilt_version = "2.31.2-alpha"
+    val hilt_jetpack_version = "1.0.0-alpha02"
     val lifecycle_version = "2.2.0"
     val nav_version = "2.3.3"
     val fragment_ktx = "1.2.5"
@@ -61,11 +60,13 @@ object Deps {
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle_version}"
     val livedata_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle_version}"
 
-    val hilt_android = "com.google.dagger:hilt-android:${hilt_version}"
-    val hilt_android_compiler = "com.google.dagger:hilt-android-compiler:$hilt_version"
-    val hilt_plugin = "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt_version}"
+    val hilt_android_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt_version}"
+    val hilt_plugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt_version}"
+    val hilt_jetpack_version = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt_jetpack_version}"
+    val hilt_jetpack_version_compiler = "androidx.hilt:hilt-compiler:${Versions.hilt_jetpack_version}"
 
-    val paycard = "cards.pay:paycardsrecognizer:$paycard_version"
+    val paycard = "cards.pay:paycardsrecognizer:${Versions.paycard_version}"
     val navigation_fragment_ktx =
         "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
     val navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"

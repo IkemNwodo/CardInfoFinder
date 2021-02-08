@@ -48,6 +48,9 @@ dependencies {
     implementation Deps.hilt_android
     kapt Deps.hilt_android_compiler
 
+    implementation Deps.hilt_jetpack_version
+    kapt Deps.hilt_jetpack_version_compiler
+
 
     implementation Deps.paycard
 

@@ -1,8 +1,10 @@
 package com.bankwithmit.domain.usecases
 
-import com.bankwithmit.domain.models.CardInfo
-import com.bankwithmit.domain.utils.Result
+import com.bankwithmit.domain.repositories.CardRepository
+import javax.inject.Inject
 
-interface GetCardInfoUsecase {
-    suspend operator fun invoke(cardNumber: Int): com.bankwithmit.domain.utils.Result<com.bankwithmit.domain.models.CardInfo>
+class GetCardInfoUsecase @Inject constructor(private val repository: CardRepository) {
+
+    suspend operator fun invoke(cardNumber: Int) =
+        repository.getCardInfo(cardNumber)
 }

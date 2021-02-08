@@ -1,14 +1,14 @@
 package com.bankwithmit.data.repositories
 
 import com.bankwithmit.data.localSource.dao.CardInfoDao
-import com.bankwithmit.data.localSource.entities.CardInfoEntity
 import com.bankwithmit.data.mapper.CardInfoMapperRemoteSource
 import com.bankwithmit.data.remoteSource.api.CardInfoService
 import com.bankwithmit.domain.models.CardInfo
 import com.bankwithmit.domain.repositories.CardRepository
 import com.bankwithmit.domain.utils.Result
+import javax.inject.Inject
 
-class CardRepositoryImpl(
+class CardRepositoryImpl @Inject constructor(
     private val cardInfoService: CardInfoService,
     private val cardInfoDao: CardInfoDao
 ) : CardRepository {
