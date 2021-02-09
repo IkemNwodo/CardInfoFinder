@@ -17,10 +17,10 @@ import javax.inject.Singleton
 
     @Singleton
     @Binds
-    abstract fun providesCardInfoRepository(cardRepositoryImpl: CardRepositoryImpl): CardRepository
+    abstract fun bindCardInfoRepository(cardRepositoryImpl: CardRepositoryImpl): CardRepository
 
-    @Provides
     @Singleton
-    abstract fun provideDispatcherProvider(defaultDispatcherProvider: DefaultDispatcherProvider): DispatcherProvider
+    @Binds
+    abstract fun bindDispatcherProvider(defaultDispatcherProvider: DefaultDispatcherProvider): DispatcherProvider
 
 }

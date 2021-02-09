@@ -19,7 +19,7 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun providesCardInfoDatabase(@ApplicationContext appContext: Context): CardInfoDatabase {
+    fun provideCardInfoDatabase(@ApplicationContext appContext: Context): CardInfoDatabase {
         return Room
             .databaseBuilder(appContext, CardInfoDatabase::class.java, CARD_INFO_DATABASE)
             .fallbackToDestructiveMigration()
@@ -28,7 +28,7 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun providesCardInfoDao(cardInfoDatabase: CardInfoDatabase): CardInfoDao {
+    fun provideCardInfoDao(cardInfoDatabase: CardInfoDatabase): CardInfoDao {
         return cardInfoDatabase.cardInfoDao
     }
 }

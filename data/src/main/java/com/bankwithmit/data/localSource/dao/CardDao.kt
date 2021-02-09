@@ -15,6 +15,9 @@ interface CardInfoDao {
     @Query("SELECT * FROM card_info_table WHERE unique_id=:id LIMIT 1")
     suspend fun getCardInfo(id: Int): CardInfoEntity?
 
+    @Query("SELECT * FROM card_info_table")
+    suspend fun getAllCardInfo(): List<CardInfoEntity>?
+
     @Query("DELETE FROM card_info_table")
     suspend fun deleteAllCardInfo()
 
