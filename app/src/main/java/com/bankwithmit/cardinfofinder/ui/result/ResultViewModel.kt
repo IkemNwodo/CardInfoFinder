@@ -24,8 +24,7 @@ class ResultViewModel @Inject constructor(val getCardInfoUsecase: GetCardInfoUse
 
     fun getCardNumber(cardNumber: Int) = viewModelScope.launch{
         _isLoading.postValue(true)
-        when(val result =
-            withContext(Dispatchers.IO){getCardInfoUsecase(cardNumber)}) {
+        when(val result = getCardInfoUsecase(cardNumber)) {
             is Result.Success -> {
                 _isLoading.postValue(false)
                 _cardInfo.postValue(result.data)
