@@ -78,8 +78,6 @@ object Deps {
     val room_compiler = "androidx.room:room-compiler:${Versions.room_version}"
     val nav_safe_args =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.nav_version}"
-    val retrofit_coroutine_adapter =
-        "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofit_adapter}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val retrofit_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     val glide = "com.github.bumptech.glide:glide:${Versions.glide_version}"
