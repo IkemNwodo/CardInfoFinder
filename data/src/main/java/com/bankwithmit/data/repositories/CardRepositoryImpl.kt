@@ -15,7 +15,7 @@ class CardRepositoryImpl @Inject constructor(
     private val localDataSource: LocalDataSource,
     private val dispatchers: DispatcherProvider
 ) : CardRepository {
-    override suspend fun getCardInfo(cardNumber: Int): Result<CardInfo> =  withContext(dispatchers.io()){
+    override suspend fun getCardInfo(cardNumber: Int): com.bankwithmit.domain.utils.Result<CardInfo> =  withContext(dispatchers.io()){
         val cardInfoResult = remoteDataSource.getCardInfo(cardNumber)
         return@withContext if (cardInfoResult.isSuccessful) {
             val mapperRemote = CardInfoMapperRemoteSource()
@@ -24,16 +24,16 @@ class CardRepositoryImpl @Inject constructor(
                 localDataSource.saveCardInfo(
                     mapperRemote.mapperToCardInfo(remoteData)
                 )
-                Result.Success(mapperRemote.transform(remoteData))
+                com.bankwithmit.domain.utils.Result.Success(mapperRemote.transform(remoteData))
             } else {
-                Result.Success(null)
+                com.bankwithmit.domain.utils.Result.Success(null)
             }
         } else {
-            Result.Error(Exception("Invalid data/failure"))
+            com.bankwithmit.domain.utils.Result.Error(Exception("Invalid data/failure"))
         }
     }
 
-    override suspend fun getSavedCards(): Result<List<CardInfo>> {
+    override suspend fun getSavedCards(): com.bankwithmit.domain.utils.Result<List<CardInfo>> {
         TODO("Not yet implemented")
     }
 }

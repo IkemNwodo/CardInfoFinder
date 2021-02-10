@@ -42,7 +42,7 @@ android {
 
 dependencies {
 
-    implementation project(":domain")
+    implementation project(':domain')
     implementation project(":data")
 
     implementation Deps.hilt_android
@@ -53,6 +53,13 @@ dependencies {
 
 
     implementation Deps.paycard
+
+    implementation Deps.retrofit
+    implementation Deps.retrofit_converter
+
+    implementation Deps.room
+    implementation Deps.room_ktx
+    kapt Deps.room_compiler
 
     implementation Deps.kotlin_stdlib
     implementation Deps.androidx_core_ktx
